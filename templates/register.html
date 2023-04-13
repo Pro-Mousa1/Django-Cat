@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Charity Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href= {% static "assets/img/favicon.png" %} rel="icon">
+  <link href={% static "assets/img/apple-touch-icon.png" %}rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href={% static "assets/vendor/animate.css/animate.min.css"%}rel="stylesheet">
+  <link href={% static "assets/vendor/aos/aos.css" %} rel="stylesheet">
+  <link href={% static "assets/vendor/bootstrap/css/bootstrap.min.css" %} rel="stylesheet">
+  <link href={% static "assets/vendor/bootstrap-icons/bootstrap-icons.css"  %}rel="stylesheet">
+  <link href={% static "assets/vendor/boxicons/css/boxicons.min.css" %} rel="stylesheet">
+  <link href={% static "assets/vendor/remixicon/remixicon.css" %} rel="stylesheet">
+  <link href={% static "assets/vendor/swiper/swiper-bundle.min.css"  %}rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href={% static "assets/css/style.css" %} rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Charity - v4.10.0
+  * Template URL: https://bootstrapmade.com/charity-free-education-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+    <section class="bg-secondary">
+        <div class="form-content-container">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="bg-warning col-6">
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <fieldset class="form-group">
+                            <legend class="border-bottom mb-4">Unite with Charity!!</legend>
+                        {{ form|crispy }}
+                        </fieldset>
+                        <div class="form-group">
+                            <input class="btn btn-success" type="submit" name="btn-submit" value="Register">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
